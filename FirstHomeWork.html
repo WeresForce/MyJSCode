@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+  var checkIfPalindrome = function()
+  {
+    var isPalindromeBool = true;
+
+    var isPalindrome = prompt("Type Palindrome");  
+
+    isPalindrome = isPalindrome.replace(/\s/g, '').toLowerCase();
+
+    var reverseString = isPalindrome.split('').reverse().join('');
+
+    if (isPalindrome === reverseString)
+     {
+      alert("It is Palindrome")
+     }
+   else
+   {
+    alert("It is not a palindrome");
+   };
+
+  };  
+
+  var currentDate = function()
+  {
+    alert(Date());
+
+  }
+
+  var leapYearCheck = function()
+  {
+    var currentYear = new Date().getFullYear();
+
+    var isLeap = ((currentYear % 4 == 0) && (currentYear % 100 != 0)) || (currentYear % 400 == 0);
+
+    alert("The Year is: "+currentYear+" And is it leap: " + isLeap);
+  }
+
+  var uppercaseFirstLetter = function()
+  {
+    var stringToUppercase = prompt("Please enter Your String");
+
+     stringToUppercase = stringToUppercase.split(' ');
+
+     for (var i = 0; i < stringToUppercase.length; i++) {
+
+      if (stringToUppercase[i]!=null &&stringToUppercase[i]!="")
+        {
+           stringToUppercase[i] = stringToUppercase[i].replace(stringToUppercase[i][0],stringToUppercase[i][0].toUpperCase());          
+        };
+     };
+
+     alert(stringToUppercase.join(' '));
+  }
+
+  var checkOccurance = function(stringToCheck, charToFind)
+  {
+    var numberOfOccurances = 0;
+
+    for (var i = 0; i < stringToCheck.length; i++)
+     {
+       if (stringToCheck[i] === charToFind)
+       {
+        numberOfOccurances++;
+       }
+    };
+
+    alert(numberOfOccurances);
+
+  }
+
+  var bubbleSort = function()
+  {
+    var numbersToSort =[5, 1, 10, 22, 44];
+
+    alert("We are going to sort " + numbersToSort.toString());
+
+    var sorted = true;
+
+    do
+    {
+      sorted = false;
+      for (var i = 0; i < numbersToSort.length; i++)
+       {
+      
+          if(numbersToSort[i] > numbersToSort[i+1])
+          {
+            var temp = numbersToSort[i];
+            numbersToSort[i] = numbersToSort[i+1];
+            numbersToSort[i+1] = temp;
+            sorted = true;
+          }
+       }
+      
+    }while (sorted === true)
+  alert(numbersToSort.toString());
+  }
+
+  </script>
+  
+</head>
+
+<body>  
+
+  <p style = "font-family:Impact">Show Date</p>
+
+  <button type = "button" onclick="currentDate()">Show Date</button>
+
+  <hr>
+
+   <p style = "font-family:Impact">Check if year is leap</p>
+
+  <button type = "button" onclick="leapYearCheck()">Check if Year is Leap</button>
+
+  <hr>
+
+   <p style = "font-family:Impact">Palindrome Task</p>
+
+   <button type = "button" onclick="checkIfPalindrome()">Palindrome this</button>
+
+  <hr>
+
+  <p style = "font-family:Impact">Uppercase Task</p>
+
+   <button type = "button" onclick="uppercaseFirstLetter()">Uppercase Task</button>
+
+   <hr>
+
+  <p style = "font-family:Impact">Number of occurances</p>
+
+  <button type = "button" onclick="checkOccurance(prompt('Enter string'),prompt('Enter letter'))">Uppercase Task</button>
+
+  <hr>
+
+  <p style = "font-family:Impact">Bubble sort</p>
+
+  <button type = "button" onclick="bubbleSort()" )>Bubble sort</button>
+
+</body>
+
+</html>
