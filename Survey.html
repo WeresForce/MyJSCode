@@ -2,11 +2,45 @@
 <html>
 <head>
   <script type="text/javascript">
+
+var answer1;
+var answer2;
+var answer3;
+var answer4;
+var answer5;
+
+var pagecontent = [
+["Question1","Plain Text Question","prompt"],
+["Question2","Radiobutton question","Radiobutton"]
+]
+
+var fillAllFields = function(numberOfQuestion)
+{
+	document.getElementById('qTitle').innerHTML = pagecontent[numberOfQuestion-1][0];
+	document.getElementById('qQuestion').innerHTML = pagecontent[numberOfQuestion-1][1];
+	document.getElementById('qContent').innerHTML = pagecontent[numberOfQuestion-1][2];
+
+}
+
+
   </script>
  </head>
 
- <body>
- <p> Test Here</p>
+ <body onload = "fillAllFields(1)">
+ <table>
+<tr>
+	<th id = "qTitle"></th>
+</tr>
+<tr>
+	<td id = "qQuestion"></td>
+</tr>
+<tr>
+	<td id = "qContent"></td>
+</tr>
+
+
+ </table>
+
 
  </body>
 
